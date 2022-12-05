@@ -14,5 +14,8 @@ public class EmployeeController {
     public String Empadd(){
         return "welcome to add employee";
     }
-
+    @GetMapping("/search")
+    public String Empsearch(){
+        return "wellcom to employee search";
+    }
 }
