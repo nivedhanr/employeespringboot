@@ -26,4 +26,8 @@ public class EmployeeController {
     public String Empview(){
         return "View all Employee";
     }
+    @GetMapping("/delete")
+    public String Empdelete(){
+        return "employee delete";
+    }
 }
