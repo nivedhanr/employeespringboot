@@ -18,6 +18,7 @@ public class EmployeeController {
     public String Welcomepage(){
         return "Welcome to employeepage";
     }
+    @CrossOrigin(origins = "*")
     @PostMapping(path="/add",consumes ="application/json",produces = "application/json")
     public String Empadd(@RequestBody Employee e){
 
