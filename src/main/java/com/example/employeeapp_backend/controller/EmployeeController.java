@@ -42,6 +42,12 @@ public class EmployeeController {
     public List<Employee> EmpView(){
         return (List<Employee>) dao.findAll();
     }
-
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/search",consumes = "application/json",produces = "application/json")
+    public List<Employee> Search(@RequestBody Employee e){
+        String empcode=String.valueOf(e.getEmpcode());
+        System.out.println(empcode);
+        return (List<Employee>) dao.Search(e.getEmpcode());
+    }
 
 }
