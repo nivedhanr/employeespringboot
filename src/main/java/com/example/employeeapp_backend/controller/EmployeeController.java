@@ -49,5 +49,16 @@ public class EmployeeController {
         System.out.println(empcode);
         return (List<Employee>) dao.Search(e.getEmpcode());
     }
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/delete",consumes = "application/json",produces = "application/json")
+    public HashMap<String,String> Delete(@RequestBody Employee e)
+    {
+        String id=String.valueOf(e.getId());
+        System.out.println(id);
+        dao.delete(e.getId());
+        HashMap<String,String> map=new HashMap<>();
+        map.put("status","success");
+        return map;
+    }
 
 }
